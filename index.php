@@ -59,6 +59,7 @@ if (!isset($_SESSION['logado'])) {
         let itemServico = listaServicos.querySelector('.itemServico:last-child').cloneNode(true);
         itemServico.querySelectorAll('input').forEach(input => input.value = '');
         listaServicos.appendChild(itemServico);
+        itemServico.querySelector('input[name="descricao[]"]').focus();
     });
 
     document.getElementById('btn-remover').addEventListener('click', function () {
@@ -67,7 +68,9 @@ if (!isset($_SESSION['logado'])) {
         let totalItens = listaServicos.querySelectorAll('.itemServico').length;
         if (itemServico && totalItens > 1) {
             listaServicos.removeChild(itemServico);
+            
         }
+
     })
 </script>
 </html>

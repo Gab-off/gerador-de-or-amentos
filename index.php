@@ -21,7 +21,7 @@ if (!isset($_SESSION['logado'])) {
 <body>
 <h1>Bem vindo <?= $_SESSION['username'] ?></h1>
 <h2>Crie o seu orçamento: </h2>
-<form action="">
+<form action="calcPage.php" method="POST">
     <div class="listaServicos">
         <div class="itemServico">
             <label>

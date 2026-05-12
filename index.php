@@ -28,7 +28,7 @@ if (!isset($_SESSION['logado'])) {
                 <input type="text" name="descricao[]" placeholder="Descreva o serviço" required>
             </label>
 
-            <select name="tipoCalculo" id="">
+            <select name="tipoCalculo[]" id="">
                 <option value="global">Preço Global</option>
                 <option value="fixo">Preço Fixo</option>
                 <option value="metro">Por Metro (m²)</option>
@@ -64,7 +64,8 @@ if (!isset($_SESSION['logado'])) {
     document.getElementById('btn-remover').addEventListener('click', function () {
         let listaServicos = document.querySelector('.listaServicos');
         let itemServico = listaServicos.querySelector('.itemServico:last-child');
-        if (itemServico) {
+        let totalItens = listaServicos.querySelectorAll('.itemServico').length;
+        if (itemServico && totalItens > 1) {
             listaServicos.removeChild(itemServico);
         }
     })
